@@ -22,6 +22,7 @@
 @import url("designs.css");
 
 /* Flex Layout Styles */
+/* Sets the body element as flex, as well as for chrome and safari. Also  sets the flex flow so that its a row and wraps */
 body {
     display: flex;
     display: -webkit-flex;
@@ -29,10 +30,12 @@ body {
     -webkit-flex-flow: row wrap;
 }
 
+/* Sets the growth as 3, shrink as 1, and the basis 301 pixels */
 section#sheet {
     flex: 3 1 301px;
 }
 
+/* Sets the growth 1, shrink as 3, and basis as 108 */
 article {
     flex: 1 3 180px;
 }
@@ -41,12 +44,16 @@ article {
 	Mobile Devices: 0 - 480 pixels
    ============================================
 */
+/* Effects only screen sizes of the max width of 480 pixels*/
 @media only screen and (max-width: 480px) {
+
+    /* Sets the image panel to full width */
     img.panel {
         width: 100%;
 
     }
 
+    /* Sets the nav to be less important than the footer that is the direct child of the body, which means that it will show up last on the page */
     nav.horizontal {
         order: 99;
     }
@@ -60,8 +67,10 @@ article {
 	Tablet and Desktop Devices: Greater than 480 pixels
    ===================================================
 */
-
+/* Effects only screens that are greater than 480 pixels */
 @media only screen and (min-width: 481px) {
+
+    /* Sets the nav so that its flexable, its a row but doesn't wrap, and has an overall height of 40 pixels */
     nav.horizontal ul {
         display: flex;
         flex-flow: row nowrap;
@@ -72,6 +81,7 @@ article {
         flex: 1 1 auto;
     }
 
+    /* Sets the sizes of the different image classes */
     img.size1 {
         width: 100%
     }
